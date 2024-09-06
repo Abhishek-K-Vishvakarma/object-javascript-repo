@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON In Object</title>
+</head>
+<body>
+  <h1>JSON in Object</h1>
+  <p>JSON: JavaScript Object Notation.</p>
+  <p>Definition of JSON: JSON is a collection of object </p>
+  <script>
+    const object = { id: 101, name: 'Abhishek', city: 'Varanasi', nationality: 'Indian' };
+    const object1 = { id: 102, name: 'Dragon', city: 'Janxi', nationality: 'China' };
+    const object2 = { id: 103, name: 'Peter', city: 'New York', nationality: 'America' };
+    const object3 = { id: 104, name: 'Neil', city: 'Bangalore', nationality: 'Indian' };
+    const object4 = { id: 105, name: 'CR7', city: 'Purt', nationality: 'Purtgali' };
+    const object5 = { id: 106, name: 'John', city: 'Euorop', nationality: 'British' };
+
+    const obj = [object, object1, object2, object3, object4, object5];
+    console.log(obj) // [{...}, {...}, {...}, {...}, {...}, {...}];
+    console.log(obj.length) // 6
+
+    for(let i = 0; i < obj.length; i++){
+      console.log(obj[i].id, obj[i].name, obj[i].city, obj[i].nationality);
+    }
+
+    let all = JSON.stringify(obj) // Object convert into String.
+    console.log(all);
+
+    let all1 = JSON.parse(all);// String convert into Object.
+    console.log(all1);
+
+    for(let key of obj){
+      console.log(Object.keys(key))
+    }
+    for(let value of obj){
+      console.log(Object.values(value))
+    }
+
+
+  for(let key of obj){   // We have feched value of keys one by one.
+    var k = Object.keys(key);
+    for(let f of k){  
+      console.log(key[f])
+    }
+  }
+</script>
+</body>
+</html>
